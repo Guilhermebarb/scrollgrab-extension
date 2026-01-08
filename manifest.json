@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Captura de Página Completa Simples",
+  "version": "1.0",
+  "description": "Tira um print de página inteira rolando automaticamente.",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "downloads"
+  ],
+  "icons": {
+    "16": "favicon.ico",
+    "48": "favicon.ico",
+    "128": "favicon.ico"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+        "16": "favicon.ico",
+        "48": "favicon.ico",
+        "128": "favicon.ico"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
