@@ -5,7 +5,6 @@
   "description": "Tira um print de página inteira rolando automaticamente.",
   "permissions": [
     "activeTab",
-    "scripting",
     "downloads"
   ],
   "icons": {
