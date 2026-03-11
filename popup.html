@@ -1,15 +1,40 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html>
 <head>
-    <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <style>
-    body { width: 200px; padding: 10px; font-family: sans-serif; }
-    button { width: 100%; padding: 10px; cursor: pointer; background-color: #4CAF50; color: white; border: none; }
-    button:hover { background-color: #45a049; }
+    body { width: 250px; padding: 15px; font-family: Arial, sans-serif; background: #f9f9f9; }
+    h3 { margin-top: 0; font-size: 16px; color: #333; text-align: center; }
+    .form-group { margin-bottom: 12px; }
+    label { font-size: 13px; color: #555; display: block; margin-bottom: 5px; font-weight: bold;}
+    select { width: 100%; padding: 8px; border-radius: 5px; border: 1px solid #ccc; font-size: 13px; }
+    button { width: 100%; padding: 12px; cursor: pointer; background-color: #0d6efd; color: white; border: none; font-weight: bold; border-radius: 5px; transition: 0.2s; font-size: 14px; margin-top: 5px;}
+    button:hover { background-color: #0b5ed7; }
   </style>
 </head>
 <body>
-  <button id="btnCapturar">Capturar Página Completa</button>
+  <h3>📸 Captura Pro</h3>
+  
+  <div class="form-group">
+    <label>1. O que capturar?</label>
+    <select id="tipoArea">
+      <option value="full">Página Inteira (Scroll)</option>
+      <option value="visible">Apenas Tela Visível</option>
+      <option value="select">✂️ Selecionar Pedaço</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>2. O que fazer depois?</label>
+    <select id="tipoAcao">
+      <option value="download_png">Baixar Imagem (PNG)</option>
+      <option value="download_pdf">Baixar Documento (PDF)</option>
+      <option value="copy">📋 Copiar (Ctrl+V)</option>
+    </select>
+  </div>
+
+  <button id="btnCapturar">Iniciar Captura</button>
+
   <script src="popup.js"></script>
 </body>
 </html>

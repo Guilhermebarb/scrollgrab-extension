@@ -1,11 +1,15 @@
-// popup.js
 document.getElementById('btnCapturar').addEventListener('click', async () => {
-  // Pega a aba ativa atual
-  let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+  const area = document.getElementById('tipoArea').value;
+  const acao = document.getElementById('tipoAcao').value;
 
-  // Envia uma mensagem para o content.js naquela aba para iniciar o processo
-  chrome.tabs.sendMessage(tab.id, { action: "start_full_page_capture" });
+  let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
   
-  // Fecha o popup
-  window.close();
+  // Envia a ordem com o que o usuário escolheu
+  chrome.tabs.sendMessage(tab.id, { 
+      action: "iniciar_captura", 
+      tipoArea: area,
+      tipoAcao: acao
+  });
+  
+  window.close(); // Fecha o menu
 });
