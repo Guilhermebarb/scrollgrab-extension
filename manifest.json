@@ -4,8 +4,7 @@
   "version": "1.0",
   "description": "Tira um print de página inteira rolando automaticamente.",
   "permissions": [
-    "activeTab",
-    "downloads"
+    "activeTab"
   ],
   "icons": {
     "16": "favicon.ico",
